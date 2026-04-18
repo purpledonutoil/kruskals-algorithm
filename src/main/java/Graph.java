@@ -29,7 +29,7 @@ public class Graph {
 
         for (Map.Entry<Integer, Integer> entry : k.entrySet()) {
             int vertex = entry.getKey();
-            groups.computeIfAbsent(vertex, _ -> new ArrayList<>()).add(vertex);
+            groups.computeIfAbsent(vertex, v -> new ArrayList<>()).add(vertex);
         }
     }
 
