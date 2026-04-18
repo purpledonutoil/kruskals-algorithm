@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GraphIntegrationTest {
+public class GraphTest {
 
     @Test
     void shouldCalculateCorrectCostForFile1() {
@@ -21,7 +21,7 @@ class GraphIntegrationTest {
     void shouldCalculateCorrectCostForFile2() {
         String path = getClass()
                 .getClassLoader()
-                .getResource("path/SR.hrn")
+                .getResource("path/TEST_mini.hrn")
                 .getPath();
         Graph graph = new Graph(path);
 
@@ -34,7 +34,7 @@ class GraphIntegrationTest {
     void shouldCalculateCorrectCostForFile3() {
         String path = getClass()
                 .getClassLoader()
-                .getResource("path/TEST_mini.hrn")
+                .getResource("path/SR.hrn")
                 .getPath();
         Graph graph = new Graph(path);
 

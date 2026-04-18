@@ -12,7 +12,7 @@ public class Graph {
     private final List<int[]> list;
     private final Map<Integer, Integer> k;
     private final List<int[]> result;
-    private Map<Integer, List<Integer>> groups;
+    private final Map<Integer, List<Integer>> groups;
     private final int MAX_COUNT;
     private int cost;
 
@@ -29,7 +29,7 @@ public class Graph {
 
         for (Map.Entry<Integer, Integer> entry : k.entrySet()) {
             int vertex = entry.getKey();
-            groups.computeIfAbsent(vertex, _ -> new ArrayList<>()).add(vertex);
+            groups.computeIfAbsent(vertex, v -> new ArrayList<>()).add(vertex);
         }
     }
 
@@ -37,9 +37,6 @@ public class Graph {
         return cost;
     }
 
-    public List<int[]> getResult() {
-        return result;
-    }
 
     public void findSpanningTree() {
         Comparator<int[]> comp = Comparator.comparing(arr -> arr[2]);
@@ -109,6 +106,6 @@ public class Graph {
             }
         }
         System.out.println(")");
-        System.out.println("Price: " + cost);
+        System.out.println("Cost: " + cost);
     }
 }
