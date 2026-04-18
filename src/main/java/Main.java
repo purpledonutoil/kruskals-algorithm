@@ -1,9 +1,20 @@
+import java.util.Objects;
+
 public class Main {
     public static void main(String[] args) {
-        String filename1 = "src/main/resources/path/pr3.hrn";
-        String filename2 = "src/main/resources/path/SR.hrn";
-        String filename3 = "src/main/resources/path/TEST_mini.hrn";
-        Graph graph = new Graph(filename3);
+        String path1 = Objects.requireNonNull(Main.class
+                        .getClassLoader()
+                        .getResource("path/TEST_mini.hrn"))
+                .getPath();
+        String path2 = Objects.requireNonNull(Main.class
+                        .getClassLoader()
+                        .getResource("path/pr3.hrn"))
+                .getPath();
+        String path3 = Objects.requireNonNull(Main.class
+                        .getClassLoader()
+                        .getResource("path/SR.hrn"))
+                .getPath();
+        Graph graph = new Graph(path2);
         graph.findSpanningTree();
         graph.print();
     }

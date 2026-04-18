@@ -12,7 +12,7 @@ public class Graph {
     private final List<int[]> list;
     private final Map<Integer, Integer> k;
     private final List<int[]> result;
-    private Map<Integer, List<Integer>> groups;
+    private final Map<Integer, List<Integer>> groups;
     private final int MAX_COUNT;
     private int cost;
 
@@ -37,9 +37,6 @@ public class Graph {
         return cost;
     }
 
-    public List<int[]> getResult() {
-        return result;
-    }
 
     public void findSpanningTree() {
         Comparator<int[]> comp = Comparator.comparing(arr -> arr[2]);
