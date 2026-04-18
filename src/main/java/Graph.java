@@ -106,6 +106,6 @@ public class Graph {
             }
         }
         System.out.println(")");
-        System.out.println("Price: " + cost);
+        System.out.println("Cost: " + cost);
     }
 }
